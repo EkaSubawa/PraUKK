@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "425928357112",
+    "firebase_url": "https://pra-ukk.firebaseio.com",
+    "project_id": "pra-ukk",
+    "storage_bucket": "pra-ukk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:425928357112:android:3cbe2b9b1eaf9b7a",
+        "android_client_info": {
+          "package_name": "com.example.ekasubawa.datasekolah"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "425928357112-3ied6veq78u6prdlo9sc89iv6un762lv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcO8n5r6Z5TFlI_1ev2mTr5M1Gnv9t_G8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

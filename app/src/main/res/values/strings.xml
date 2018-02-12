@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Data Sekolah</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="field_kosong">Email dan Password Tidak Boleh Kosong</string>
+    <string name="pass_kosong">Password Tidak Boleh Kosong</string>
+    <string name="email_kosong">Email Tidak Boleh Kosong</string>
+    <string name="form_kosong">Form Tidak Boleh Kosong</string>
+    <string name="nama_sekolah">Nama Sekolah Tidak Boleh Kosong</string>
+    <string name="nss">NSS Sekolah Tidak Boleh Kosong</string>
+    <string name="alamat">Alamat Sekolah Tidak Boleh Kosong</string>
+    <string name="rw">Rw Tidak Boleh Kosong</string>
+    <string name="rt">Rt Tidak Boleh Kosong</string>
+    <string name="no_telp">No Telepon Sekolah Tidak Boleh Kosong</string>
+    <string name="no_fax">No Fax Sekolah Tidak Boleh Kosong</string>
+    <string name="email">Email Tidak Boleh Kosong</string>
+    <string name="website">Website Tidak Boleh Kosong</string>
+    <string name="kepala_sekolah">Nama Kepala Sekolah Tidak Boleh Kosong</string>
+    <string name="gagal_menambahkan">Error Menambahkan</string>
+    <string name="berhasil">Berhasil Menambahkan Sekolah</string>
+
+</resources>
