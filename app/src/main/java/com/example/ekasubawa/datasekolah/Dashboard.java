@@ -88,7 +88,7 @@ public class Dashboard extends AppCompatActivity {
                     public void onClick(View view) {
                         Intent intent = new Intent(Dashboard.this, DetailData.class);
                         intent.putExtra("nama", model.getNama());
-                        intent.putExtra("alamat", model.getAlamat());
+                        intent.putExtra("image", model.getImage());
 
                         startActivity(intent);
 
