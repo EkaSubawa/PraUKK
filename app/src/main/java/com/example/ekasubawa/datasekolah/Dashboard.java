@@ -8,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.TextureView;
@@ -36,7 +37,6 @@ public class Dashboard extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private FloatingActionButton btnAdd;
-    @BindView(R.id.postDesa) Button mButton;
     @BindView(R.id.recycleView) RecyclerView mRecycleView;
 
     private FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
@@ -66,37 +66,34 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
-        mButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String uId = db_desa.push().getKey();
-
-                Desa desa = new Desa("003","Ubud","01");
-                db_desa.child(uId).setValue(desa).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-
-
-                        if (task.isSuccessful()) {
-                            Toast.makeText(Dashboard.this, "Berhasil", Toast.LENGTH_LONG).show();
-                        }
-
-                    }
-                });
-            }
-        });
+        LinearLayoutManager horizontalLayoutManagaer=new LinearLayoutManager(Dashboard.this,LinearLayoutManager.VERTICAL,false);
+        mRecycleView.setLayoutManager(horizontalLayoutManagaer);
+        db_sekolah.keepSynced(true);
 
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Sekolah, SekolahViewHolder>(
                 Sekolah.class,
                 R.layout.sekolah_view,
                 SekolahViewHolder.class,
                 db_sekolah
+
         ) {
             @Override
-            protected void populateViewHolder(SekolahViewHolder viewHolder, Sekolah model, int position) {
+            protected void populateViewHolder(SekolahViewHolder viewHolder, final Sekolah model, int position) {
                 viewHolder.setNama(model.getNama());
                 viewHolder.setAlamat(model.getAlamat());
                 viewHolder.setImage(getApplicationContext(), model.getImage());
+
+                viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(Dashboard.this, DetailData.class);
+                        intent.putExtra("nama", model.getNama());
+                        intent.putExtra("alamat", model.getAlamat());
+
+                        startActivity(intent);
+
+                    }
+                });
             }
         };
 
